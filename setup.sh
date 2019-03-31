@@ -10,7 +10,7 @@ apt-get update
 apt-get -y upgrade
 
 # install git docker and docker-compose
-apt-get -y install git docker docker-compose
+apt-get -y install git docker.io docker-compose
 
 # clone dnmp from github
 git clone https://github.com/yeszao/dnmp.git

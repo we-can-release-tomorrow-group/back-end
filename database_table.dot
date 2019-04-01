@@ -2,7 +2,7 @@ digraph
 {
     node [shape=record];
 
-    student [label="student | {<id> id | student id | password | name |<major_id> major id |<college_id> college id | grade}"];
+    student [label="student | {<id> id | student id | password | name |<major_id> major id | grade}"];
     laboratory [label="laboratory | {<id> id |<college_id> college id | name | description}"];
     job [label="job | {<id> id |<laboratory_id> laboratory id | name | num | description}"];
     skill [label="skill | {<id> id | name}"]
@@ -14,7 +14,6 @@ digraph
     job_skill [label="job skill | {id |<job_id> job id |<skill_id> skill id | level}"]
 
     student:major_id -> major:id;
-    student:college_id -> college:id;
     laboratory:college_id -> college:id;
     job:laboratory_id -> laboratory:id;
     award:student_id -> student:id;

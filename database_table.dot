@@ -1,0 +1,27 @@
+digraph
+{
+    node [shape=record];
+
+    student [label="student | {<id> id | student id | password | name |<major_id> major id | grade}"];
+    laboratory [label="laboratory | {<id> id |<college_id> college id | name | description}"];
+    job [label="job | {<id> id |<laboratory_id> laboratory id | name | num | description}"];
+    skill [label="skill | {<id> id | name}"]
+    award [label="award | {id |<student_id> student id | name}"]
+    college [label="college | {<id> id | name}"]
+    major [label="major | {<id>id | name |<college_id> college id}"]
+    student_skill [label="student skill | {id |<student_id> student id |<skill_id> skill id | level}"]
+    submit_record [label="submit record | {id |<student_id> student id |<job_id> job id | time | status}"]
+    job_skill [label="job skill | {id |<job_id> job id |<skill_id> skill id | level}"]
+
+    student:major_id -> major:id;
+    laboratory:college_id -> college:id;
+    job:laboratory_id -> laboratory:id;
+    award:student_id -> student:id;
+    major:college_id -> college:id;
+    student_skill:student_id -> student:id;
+    student_skill:skill_id -> skill:id;
+    submit_record:student_id -> student:id;
+    submit_record:job_id -> job:id;
+    job_skill:job_id -> job:id;
+    job_skill:skill_id -> skill:id;
+}
